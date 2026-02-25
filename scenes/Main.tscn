@@ -1,14 +1,55 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://byaedv4n1fd7s" path="res://scenes/green_ship.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://bw0etg5p3bdyb" path="res://scenes/adventurer.tscn" id="3_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://cirwssqa1y3jv" path="res://assets/fasilkom.png" id="4_rarhs"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
-position = Vector2(296, 324)
+position = Vector2(242, 538)
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
-position = Vector2(856, 324)
+position = Vector2(1043, 523)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
-position = Vector2(576, 394)
+position = Vector2(175, 609)
+
+[node name="Ground4" parent="." unique_id=1724918509 instance=ExtResource("1_elqb8")]
+position = Vector2(685, 330)
+
+[node name="Ground5" parent="." unique_id=1631568876 instance=ExtResource("1_elqb8")]
+position = Vector2(507, 185)
+
+[node name="Ground6" parent="." unique_id=1009956345 instance=ExtResource("1_elqb8")]
+position = Vector2(329, 330)
+
+[node name="Ground7" parent="." unique_id=421618815 instance=ExtResource("1_elqb8")]
+position = Vector2(1202, 402)
+
+[node name="adventurer" parent="." unique_id=1646063932 instance=ExtResource("3_0bbpv")]
+position = Vector2(30, 518)
+
+[node name="Label" type="Label" parent="." unique_id=512454508]
+offset_left = 40.0
+offset_top = 76.0
+offset_right = 313.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 24
+text = "Space - JUMP
+LCTRL - CROUCH
+A/D - MOVE LEFT/RIGHT
+Q - TELEPORT"
+
+[node name="green_ship" parent="." unique_id=1618074206 instance=ExtResource("2_rvslj")]
+position = Vector2(136, 440)
+
+[node name="Ground8" parent="." unique_id=602218624 instance=ExtResource("1_elqb8")]
+position = Vector2(504, -24)
+rotation = 1.5707964
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=942870349]
+position = Vector2(408, 104)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_rarhs")

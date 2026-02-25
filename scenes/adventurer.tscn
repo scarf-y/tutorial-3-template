@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://bw0etg5p3bdyb"]
+
+[ext_resource type="Script" uid="uid://v2t64h5h1d28" path="res://character_body_2d.gd" id="1_i0sav"]
+[ext_resource type="Texture2D" uid="uid://d2to1aj6m7mgl" path="res://assets/kenney_platformercharacters/PNG/Adventurer/adventurer_tilesheet.png" id="2_023up"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_023up"]
+radius = 27.0
+height = 84.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h70i8"]
+atlas = ExtResource("2_023up")
+region = Rect2(160, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuek1"]
+atlas = ExtResource("2_023up")
+region = Rect2(240, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36s3u"]
+atlas = ExtResource("2_023up")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_023up"]
+atlas = ExtResource("2_023up")
+region = Rect2(160, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn81r"]
+atlas = ExtResource("2_023up")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjiwv"]
+atlas = ExtResource("2_023up")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk38e"]
+atlas = ExtResource("2_023up")
+region = Rect2(80, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lbvl"]
+atlas = ExtResource("2_023up")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81icx"]
+atlas = ExtResource("2_023up")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2doy"]
+atlas = ExtResource("2_023up")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_611x1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h70i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuek1")
+}],
+"loop": false,
+"name": &"clap",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36s3u")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_023up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn81r")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjiwv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk38e")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lbvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81icx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2doy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h70i8"]
+radius = 27.0
+height = 68.0
+
+[node name="adventurer" type="CharacterBody2D" unique_id=1646063932]
+script = ExtResource("1_i0sav")
+
+[node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=1551326097]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_023up")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784986636]
+sprite_frames = SubResource("SpriteFrames_611x1")
+animation = &"crouch"
+
+[node name="CollisionCrouching" type="CollisionShape2D" parent="." unique_id=1963067220]
+position = Vector2(1, 21)
+shape = SubResource("CapsuleShape2D_h70i8")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=25009837]
+position = Vector2(0, -13)
+target_position = Vector2(0, -19)

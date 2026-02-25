@@ -8,8 +8,6 @@ Fitur yang diimplementasikan:
 * Crouching (dengan perubahan collider & kecepatan)
 * Teleport (dengan animasi "clap" dan cooldown)
 
----
-
 ## 1. Double Jump
 
 ### Konsep
@@ -208,4 +206,8 @@ func play_anim(animation_name):
 
 * Godot 4 Documentation – Timers
   [https://docs.godotengine.org/en/stable/classes/class_timer.html](https://docs.godotengine.org/en/stable/classes/class_timer.html)
+
+* Godot 2D Sprite Animation - IcyEngine [https://www.youtube.com/watch?v=-f1bHR0iiEY](https://www.youtube.com/watch?v=-f1bHR0iiEY)
+
+* Aoi Todo Fully Explained [https://youtu.be/TXMVJHwUKxA?si=DlDHo7kJBu0darYN](https://youtu.be/TXMVJHwUKxA?si=DlDHo7kJBu0darYN)
 

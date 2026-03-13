@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
+[ext_resource type="Texture2D" uid="uid://cinalql55drey" path="res://assets/gunung_semeru_pixelized.png" id="1_c01mt"]
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
-[ext_resource type="PackedScene" uid="uid://byaedv4n1fd7s" path="res://scenes/green_ship.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://bw0etg5p3bdyb" path="res://scenes/adventurer.tscn" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://cirwssqa1y3jv" path="res://assets/fasilkom.png" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://g4te5egqvu80" path="res://scenes/radio.tscn" id="5_c01mt"]
+[ext_resource type="AudioStream" uid="uid://dr6oeiga88hsy" path="res://assets/sounds/bgm.wav" id="5_vcsgt"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=727571885]
+position = Vector2(608.00006, 195.99997)
+scale = Vector2(17.279999, 12.053333)
+texture = ExtResource("1_c01mt")
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
 position = Vector2(242, 538)
@@ -42,9 +49,6 @@ LCTRL - CROUCH
 A/D - MOVE LEFT/RIGHT
 Q - TELEPORT"
 
-[node name="green_ship" parent="." unique_id=1618074206 instance=ExtResource("2_rvslj")]
-position = Vector2(136, 440)
-
 [node name="Ground8" parent="." unique_id=602218624 instance=ExtResource("1_elqb8")]
 position = Vector2(504, -24)
 rotation = 1.5707964
@@ -53,3 +57,11 @@ rotation = 1.5707964
 position = Vector2(408, 104)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_rarhs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1779384114]
+stream = ExtResource("5_vcsgt")
+volume_db = 3.418
+pitch_scale = 1.5
+
+[node name="Radio" parent="." unique_id=1088547171 instance=ExtResource("5_c01mt")]
+position = Vector2(792, 264)

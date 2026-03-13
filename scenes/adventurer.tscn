@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v2t64h5h1d28" path="res://character_body_2d.gd" id="1_i0sav"]
 [ext_resource type="Texture2D" uid="uid://d2to1aj6m7mgl" path="res://assets/kenney_platformercharacters/PNG/Adventurer/adventurer_tilesheet.png" id="2_023up"]
+[ext_resource type="AudioStream" uid="uid://dqwjo6wbt5cyo" path="res://assets/sounds/blink_sfx.wav" id="3_h70i8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_023up"]
 radius = 27.0
@@ -123,7 +124,7 @@ shape = SubResource("CapsuleShape2D_023up")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784986636]
 sprite_frames = SubResource("SpriteFrames_611x1")
-animation = &"crouch"
+animation = &"clap"
 
 [node name="CollisionCrouching" type="CollisionShape2D" parent="." unique_id=1963067220]
 position = Vector2(1, 21)
@@ -132,3 +133,13 @@ shape = SubResource("CapsuleShape2D_h70i8")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=25009837]
 position = Vector2(0, -13)
 target_position = Vector2(0, -19)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=39035195]
+limit_left = -256
+limit_top = -256
+limit_right = 1472
+limit_bottom = 640
+
+[node name="BlinkSFX" type="AudioStreamPlayer2D" parent="." unique_id=1004507838]
+stream = ExtResource("3_h70i8")
+volume_db = 5.86

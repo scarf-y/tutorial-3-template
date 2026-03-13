@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://g4te5egqvu80"]
+
+[ext_resource type="Script" uid="uid://c60j4ngtyl3w6" path="res://radio.gd" id="1_ldjbc"]
+[ext_resource type="Texture2D" uid="uid://bdb1xtckvbxby" path="res://assets/spritesheets/StereoPlayer.png" id="2_7h80l"]
+[ext_resource type="AudioStream" uid="uid://dr6oeiga88hsy" path="res://assets/sounds/bgm.wav" id="2_hhhqh"]
+[ext_resource type="AudioStream" uid="uid://bko6htu8f7rs2" path="res://assets/sounds/Loyalty_Freak_Music_-_01_-_Go_to_the_Picnicchosic.com_(chosic.com).mp3" id="3_uf7ta"]
+[ext_resource type="AudioStream" uid="uid://dlw2nbennddm0" path="res://assets/sounds/Monkeys-Spinning-Monkeys(chosic.com).mp3" id="4_144bg"]
+[ext_resource type="AudioStream" uid="uid://btcfffyeivb3w" path="res://assets/sounds/Sakura-Girl-Daisy-chosic.com_.mp3" id="5_wvvpt"]
+[ext_resource type="AudioStream" uid="uid://0feg86pf8owp" path="res://assets/sounds/Muraqa - Diantara Ku Dan Sawit ( Mejikuhibiniu Parody ).mp3" id="6_uf7ta"]
+[ext_resource type="AudioStream" uid="uid://dfek2s3ujxype" path="res://assets/sounds/Kessoku Band - Pak Vramroro ( Original Reupload ).mp3" id="7_144bg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b7o3"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(0, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mpwk"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(92, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhhqh"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(0, 0, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf7ta"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(92, 0, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_144bg"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(92, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvvpt"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(184, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppvrc"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(276, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5v4t"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(368, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1k7v"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(460, 84, 92, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gmlj"]
+atlas = ExtResource("2_7h80l")
+region = Rect2(552, 84, 92, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4d5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b7o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mpwk")
+}],
+"loop": true,
+"name": &"change_visual",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhhqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf7ta")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_144bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvvpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppvrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5v4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1k7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gmlj")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5fyh"]
+size = Vector2(137, 108)
+
+[node name="Radio" type="Area2D" unique_id=1088547171]
+script = ExtResource("1_ldjbc")
+playlist = Array[AudioStream]([ExtResource("2_hhhqh"), ExtResource("3_uf7ta"), ExtResource("4_144bg"), ExtResource("5_wvvpt"), ExtResource("6_uf7ta"), ExtResource("7_144bg")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=519506543]
+sprite_frames = SubResource("SpriteFrames_d4d5w")
+animation = &"change_visual"
+frame_progress = 0.14880717
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=876587072]
+position = Vector2(-2.5, -21)
+shape = SubResource("RectangleShape2D_w5fyh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1188747698]
+max_distance = 500.0
+attenuation = 1.5
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=1270702844]
+offset_left = -71.0
+offset_top = -64.0
+offset_right = 66.0
+offset_bottom = -29.0
+
+[node name="MusicLabel" type="Label" parent="." unique_id=740141209]
+offset_left = -71.0
+offset_top = -96.0
+offset_right = 65.0
+offset_bottom = -73.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var stand_col = $CollisionStanding
 @onready var crouch_col = $CollisionCrouching
 @onready var ceiling_ray = $RayCast2D
+@onready var teleport_sfx = $BlinkSFX
 
 var facing_direction := 1.0
 
@@ -130,6 +131,7 @@ func do_teleport():
 	
 	if result.is_empty():
 		global_position = target_position
+		teleport_sfx.play(0.30)
 	else:
 		print("Teleport blocked!")
 	

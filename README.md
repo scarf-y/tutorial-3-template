@@ -1,4 +1,7 @@
-# Latihan Mandiri: Eksplorasi Mekanika Pergerakan
+<details>
+<summary> Tutorial 3 </summary>
+    
+## Latihan Mandiri: Eksplorasi Mekanika Pergerakan
 
 README ini menjelaskan implementasi sistem movement karakter menggunakan `CharacterBody2D` dalam Godot.
 
@@ -210,4 +213,58 @@ func play_anim(animation_name):
 * Godot 2D Sprite Animation - IcyEngine [https://www.youtube.com/watch?v=-f1bHR0iiEY](https://www.youtube.com/watch?v=-f1bHR0iiEY)
 
 * Aoi Todo Fully Explained [https://youtu.be/TXMVJHwUKxA?si=DlDHo7kJBu0darYN](https://youtu.be/TXMVJHwUKxA?si=DlDHo7kJBu0darYN)
+---
+</details>
 
+<details>
+<summary> Tutorial 5 </summary>
+    
+### **Implementasi Animasi, Audio, dan Variasi Aset**
+
+#### **Proses Pengerjaan**
+
+Pada tutorial ini, saya mempelajari cara mengintegrasikan aset visual (spritesheet) dan audio ke dalam mesin game Godot. Prosesnya dimulai dengan:
+
+1. **Latihan Dasar**: Menggunakan `AnimatedSprite2D` untuk animasi karakter yang sudah ada, serta melakukan rekaman mandiri menggunakan *Audacity* untuk membuat SFX "Teleport/Blink" yang unik.
+2. **Integrasi Audio**: Memasukkan audio ke dalam game menggunakan `AudioStreamPlayer` dan `AudioStreamPlayer2D` untuk memahami perbedaan antara suara global dan suara posisional.
+3. **Latihan Mandiri (Radio System)**: Saya memutuskan untuk membuat sebuah objek interaktif berupa **Radio/Stereo**. Objek ini dirancang untuk menjadi pusat kendali musik di dalam level, yang menggabungkan logika interaksi pemain dengan sistem audio yang dinamis.
+
+#### **Analisis Pemenuhan Tugas Mandiri**
+
+Implementasi sistem Radio ini memenuhi poin-berpoin tugas mandiri sebagai berikut:
+
+* **Objek Baru dengan Animasi Spritesheet**:
+Saya menambahkan objek Radio yang memiliki spritesheet khusus. Objek ini memiliki tiga status animasi: `off` (mati), `on` (saat memutar musik), dan `change_visual` (transisi saat mengganti lagu). Ini memenuhi syarat pembuatan minimal satu objek baru di luar tutorial.
+* **Minimal 1 Audio SFX**:
+Syarat ini dipenuhi melalui **SFX Teleport/Blink** yang saya buat sendiri menggunakan Audacity. Suara ini dipicu setiap kali pemain melakukan aksi teleportasi di dalam game.
+* **Minimal 1 Musik Latar (BGM)**:
+Radio ini memuat sebuah `playlist` (Array dari `AudioStream`). Lagu-lagu seperti *Monkeys Spinning Monkeys* dan *Daisy* berfungsi sebagai BGM yang bisa dipilih oleh pemain.
+* **Implementasi Interaksi**:
+Pemain dapat berinteraksi dengan Radio menggunakan tombol `E` (untuk menyalakan/ganti lagu) dan `F` (untuk mematikan). Kode menggunakan `Area2D` dan sinyal `body_entered`/`body_exited` untuk mendeteksi keberadaan pemain.
+* **Implementasi Audio Feedback**:
+Saat pemain menekan tombol interaksi, game memberikan *feedback* instan berupa musik yang mulai berputar atau berganti. Selain itu, muncul elemen UI (Label) yang memberitahu judul lagu yang sedang diputar menggunakan sistem `Tween` untuk efek *fade-out*.
+* **Sistem Audio Posisional (Poin Plus)**:
+Dengan menggunakan `AudioStreamPlayer2D` pada objek Radio, saya berhasil mengimplementasikan audio yang volumenya mengecil saat pemain menjauh, sesuai dengan saran eksplorasi tingkat lanjut pada tutorial.
+
+---
+
+#### **Daftar Referensi**
+
+**Aset Musik & Audio:**
+
+* **Monkeys Spinning Monkeys** oleh Kevin MacLeod: [Link Incompetech](https://incompetech.com/) (Licensed under CC BY 3.0).
+* **Daisy** oleh Sakura Girl: [Link Soundcloud](https://soundcloud.com/sakuragirl_official).
+* **SFX Teleport**: Rekaman mandiri menggunakan Audacity.
+* **Pak Vramroro**: [Kessoku Band](https://www.youtube.com/watch?v=2p2WBAc3ZQ4)
+* **Diantara Ku Dan Sawit ( Mejikuhibiniu Parody )**: [Muraqa](https://www.youtube.com/watch?v=i2JQMDgNOa8&list=RDi2JQMDgNOa8&start_radio=1)
+
+**Referensi Video & Dokumentasi:**
+
+1. **Tutorial Sistem Interaksi**: [How to make an INTERACT SYSTEM in Godot 4](https://www.youtube.com/watch?v=pQINWFKc9_k) - Menjadi acuan dasar logika deteksi area pemain.
+2. **Manajemen Audio**: [Godot 4 AudioStreamPlayer2D Tutorial](https://www.youtube.com/watch?v=2p2WBAc3ZQ4) - Referensi untuk pengaturan *attenuation* (penurunan volume berdasarkan jarak).
+3. **Sistem Playlist & UI**: [Music Player with Playlist in Godot](https://www.youtube.com/watch?v=i2JQMDgNOa8&list=RDi2JQMDgNOa8&start_radio=1) - Acuan untuk logika perpindahan index pada array musik.
+4. **Sistem Tween (Godot 4)**: Dokumentasi resmi Godot mengenai `create_tween()` untuk membuat notifikasi lagu yang memudar (*fade-out*).
+5. **Generasi Aset**: Bantuan AI Gemini untuk pembuatan kerangka dasar spritesheet Radio sesuai spesifikasi 32x32 piksel.
+
+---
+</details>
